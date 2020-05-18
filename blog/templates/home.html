@@ -2,8 +2,8 @@
 <div class="card">
     <article class="media ml-2">
         <img style="width: 180px; height: 270px;" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
-        <div class="media-body" style="background-color: rgb(80, 243, 102); color: black;border-radius: 5%; font-style: italic;">
-            <h5 class="mt-0"><a style="text-decoration: none; font-weight: 700; background-color: rgb(107, 177, 107);" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
+        <div class="media-body" style="background-color: white;font-style: italic;border-radius: 5%;">
+            <h5 class="mt-0"><a style="text-decoration: none; font-weight: 700; background-color:blueviolet;" href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ post.author.username }}</a>
                 <small><i class="text-primary ml-5"> Blog was Posted on {{ post.date_posted.strftime("%m/%d/%Y, %H:%M") }}</i></small></h5>
             <hr>
             <a href="{{ url_for('posts.post', post_id=post.id) }}" style="text-decoration: none; background-color: rgb(105, 224, 105);">
@@ -14,5 +14,5 @@
     </article>
 </div>
 <br> {% endfor %} {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %} {% if page_num %} {% if posts.page == page_num %}
-<a class="btn btn-success mb-4" style="background-color: rgb(15, 221, 60);" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a> {% else %}
-<a class="btn btn-outline-success mb-4" style="background-color: rgb(239, 243, 8);" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a> {% endif %} {% else %} ... {% endif %} {% endfor %} {% endblock %}
+<!-- <a class="btn btn-success mb-4" style="background-color:blue;" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a> {% else %}
+<a class="btn btn-outline-success mb-4" style="background-color: rgb(239, 243, 8);" href="{{ url_for('main.home', page=page_num) }}">{{ page_num }}</a> {% endif %} {% else %} ... {% endif %} {% endfor %} {% endblock %} -->
